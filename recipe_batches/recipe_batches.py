@@ -32,11 +32,11 @@ batches = int(min(list_of_batches))
 Out of all the values greater than 1, find and return the minimum value. Could use min()
 '''
 def recipe_batches(recipe, ingredients):
-    batch_amts = []
+    batch_amts = [] # constant
 
-    for key in recipe:
-        if key not in ingredients:
-            return 0
+    for key in recipe: # O(n)
+        if key not in ingredients: # c
+            return 0 # c
         else:
             rec_value = recipe.get(key)
             ing_value = ingredients.get(key)
@@ -45,7 +45,13 @@ def recipe_batches(recipe, ingredients):
     
     return int(min(batch_amts))
         
+'''
+**ANALYZE**
+First pass time complexity: O(n)
+First pass space complexity: O(c)
 
+Not too bad. Could perhaps use a list comprehension to shorten the code?
+'''
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
