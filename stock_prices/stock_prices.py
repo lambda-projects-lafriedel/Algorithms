@@ -13,7 +13,6 @@ Edge cases:
 Must check that all list items are numbers
 If 1 or 0 items in list, return 0
 If two numbers in list...would I have to do anything differently than what the main case would be?
-What happens if a price shows up twice?
 
 **MAKE A PLAN**
 
@@ -34,12 +33,16 @@ Keep going, and once the loop is complete, return max_price_so_far
 '''
 
 def find_max_profit(prices):
-    max_profit = 0
-    current_index = 1
+    # Edge case: Price list length of 0 or 1 returns a profit of 0.
+    if len(prices) < 2: # constant
+        return 0 # constant
 
-    for p in range(len(prices)-1):
-        price = prices[p+1]
-        for i in range(0, current_index):
+    max_profit = 0 # constant
+    current_index = 1 # constant
+
+    for p in range(len(prices)-1): # O(n)
+        price = prices[p+1] # constant
+        for i in range(0, current_index): # O(n)
             profit = price - prices[i]
 
             if profit < 0 and max_profit == 0:
@@ -49,6 +52,16 @@ def find_max_profit(prices):
         current_index += 1
     
     return max_profit
+
+'''
+**ANALYZE**
+First pass time complexity: O(n^2)
+First pass space complexity: O(c) / constant
+Space complexity is great, time complexity is not. It's poor because of the nested for loops.
+
+Improvements:
+Can I store and maintain the current value being compared without resorting to a loop?
+'''
 
 
 if __name__ == '__main__':
