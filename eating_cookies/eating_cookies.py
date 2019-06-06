@@ -41,6 +41,13 @@ I want to find all the ways that the numbers 1, 2, and 3 can be added up and equ
 def eating_cookies(n, cache=None):
     cookies_per_turn = [0,1,2,3]
 
+    if n == 0:
+        return 0
+    elif n <= 2:
+        return n
+    else:
+        
+
 
 
 if __name__ == "__main__":

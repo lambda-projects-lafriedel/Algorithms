@@ -61,6 +61,7 @@ Space complexity is great, time complexity is not. It's poor because of the nest
 
 Improvements:
 Can I store and maintain the current value being compared without resorting to a loop?
+I could instantiate max_profit as -inf so I don't have to account for negative profits
 '''
 
 
