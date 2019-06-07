@@ -13,6 +13,22 @@ Instantiate a list = ['rock', 'paper', 'scissors']
 For each index in rps list
 
 return [list + list] ?
+ 0 1 2
+[r p s]
+
+length of returned list is 3^2
+
+n = 2:
+   0 1
+0 [r r] 
+1 [r p] 
+2 [r s] 
+3 [p r] 
+4 [p p] 
+5 [p s] 
+6 [s r] 
+7 [s p] 
+8 [s s]
 
 n = 3:
  0 1 2
@@ -48,36 +64,55 @@ n = 3:
 
 def rock_paper_scissors(n):
 
+    # Variables
+    plays = ["rock", "paper", "scissors"]
+    final_list = []
 
+    # Functions
+    def rps_inner(n, passed_list):
+        # Base case
+        if n == 0:
+            return [passed_list]
 
-
-
-
-
-
-
-
-
-
-
-
-    # List of n elements, instantiated with empty strings
-    final_list = ([[""] * n] * 3) * 3 * 3
-    plays_list = ['rock', 'paper', 'scissors']
-
-    def rps_inner(n, list):
-        nonlocal plays_list
-        no
-
-      # I need the index of the 
-        while n > 0:
-            for i in len(plays_list):
-            final_list[n][n-1] = plays_list[i]
-            rps_inner(n-1, final_list)
-
-      return plays_list[n]
-
+        return rps_inner(n-1, passed_list + ["rock"]) + rps_inner(n-1, passed_list + ["paper"]) + rps_inner(n-1, passed_list + ["scissors"])
+    
+    
+    # Return a list of lists that contains strings
     return rps_inner(n, final_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def rock_paper_scissors(n):
+
+#     # List of n elements, instantiated with empty strings
+#     final_list = ([[""] * n] * 3) * 3 * 3
+#     plays_list = ['rock', 'paper', 'scissors']
+
+#     def rps_inner(n, list):
+#         nonlocal plays_list
+        
+
+#       # I need the index of the 
+#         while n > 0:
+#             for i in len(plays_list):
+#                 final_list[n][n-1] = plays_list[i]
+#             rps_inner(n-1, final_list)
+
+#       return plays_list[n]
+
+#     return rps_inner(n, final_list)
 
 
         
